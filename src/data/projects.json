@@ -1,0 +1,105 @@
+{
+  "source": "프로젝트목록.xlsx",
+  "projects": [
+    {
+      "row": 2,
+      "category": "신사업",
+      "name": "해외 B2B 디스트리뷰터 발굴(동남아)",
+      "owner": "해외영업 리더",
+      "due": "2026-11-30",
+      "status": "진행",
+      "updatedAt": "2026-09-02",
+      "nextDecision": "1차 후보 5곳 미팅 결과 공유"
+    },
+    {
+      "row": 3,
+      "category": "신사업",
+      "name": "라베니 선케어 올리브영 입점",
+      "owner": "BM 팀장",
+      "due": "2026-11-15",
+      "status": "진행",
+      "updatedAt": "2026-10-17",
+      "nextDecision": "입점 조건(마진) 결정"
+    },
+    {
+      "row": 4,
+      "category": "신사업",
+      "name": "오프(OPHE) 주얼리 팝업",
+      "owner": "브랜드 리더",
+      "due": "2026-12-20",
+      "status": "준비",
+      "updatedAt": "2026-10-03",
+      "nextDecision": "장소 후보 2곳 중 선택"
+    },
+    {
+      "row": 5,
+      "category": "신사업",
+      "name": "AZH 진단 면세점 무인 운영",
+      "owner": "마케팅 리더",
+      "due": "2026-10-31",
+      "status": "진행",
+      "updatedAt": "2026-08-28",
+      "nextDecision": "중국어 번역 검수자 지정"
+    },
+    {
+      "row": 6,
+      "category": "경영관리",
+      "name": "IO Finance 경량 대시보드 전환",
+      "owner": "경영관리 팀장",
+      "due": "2026-11-10",
+      "status": "진행",
+      "updatedAt": "2026-10-14",
+      "nextDecision": "존치 범위 확정"
+    },
+    {
+      "row": 7,
+      "category": "경영관리",
+      "name": "고정비 대장 정리(해지 항목)",
+      "owner": "재무 담당",
+      "due": "2026-10-20",
+      "status": "진행",
+      "updatedAt": "2026-09-30",
+      "nextDecision": "해지 예정 3건 처리 확인"
+    },
+    {
+      "row": 8,
+      "category": "경영관리",
+      "name": "공용 드라이브 권한 점검",
+      "owner": "인사총무 리더",
+      "due": "2026-09-30",
+      "status": "진행",
+      "updatedAt": "2026-09-12",
+      "nextDecision": "재무 폴더 권한 축소 완료 확인"
+    },
+    {
+      "row": 9,
+      "category": "경영관리",
+      "name": "연차 취합 결재선 전환",
+      "owner": "인사총무 리더",
+      "due": "2026-09-15",
+      "status": "완료",
+      "updatedAt": "2026-09-14",
+      "nextDecision": "-"
+    },
+    {
+      "row": 10,
+      "category": "경영관리",
+      "name": "주 1회 AI 실습 모임 운영",
+      "owner": "경영관리 임원",
+      "due": "2026-12-31",
+      "status": "진행",
+      "updatedAt": "2026-10-15",
+      "nextDecision": "11월 주제 선정"
+    },
+    {
+      "row": 11,
+      "category": "신사업",
+      "name": "붐앤잽 카페24 이전",
+      "owner": "마케팅 리더",
+      "due": "2026-10-15",
+      "status": "진행",
+      "updatedAt": "2026-10-01",
+      "nextDecision": "도메인 연결 일정"
+    }
+  ]
+}

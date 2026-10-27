@@ -1,0 +1,429 @@
+:root {
+  --ink: #16181d;
+  --muted: #565c67;
+  --line: #dde1e6;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --head: #eef0f3;
+
+  --stalled: #a14a00;
+  --stalled-bg: #fff4e6;
+  --stalled-badge-bg: #ffe0b8;
+  --stalled-badge-ink: #6e3300;
+
+  --overdue: #b42318;
+  --overdue-bg: #fef0ef;
+  --overdue-badge-bg: #fbd5d2;
+  --overdue-badge-ink: #7f1d15;
+
+  --unknown: #8a5a00;
+
+  color-scheme: light;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 'Noto Sans KR',
+    sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.page {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 머리 */
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+.as-of {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ① 숫자 4개 */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 10px;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--ink);
+  border-radius: 8px;
+  padding: 14px 18px 12px;
+}
+
+.stat dt {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.stat dd {
+  margin: 2px 0 0;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-unit {
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.stat-stalled {
+  border-top-color: var(--stalled);
+}
+
+.stat-stalled .stat-value {
+  color: var(--stalled);
+}
+
+.stat-overdue {
+  border-top-color: var(--overdue);
+}
+
+.stat-overdue .stat-value {
+  color: var(--overdue);
+}
+
+.legend {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ② 거르기 */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 11rem;
+}
+
+.filter-label {
+  font-weight: 700;
+}
+
+select,
+.reset {
+  min-height: 48px;
+  font: inherit;
+  color: var(--ink);
+  border: 1px solid #b9bfc8;
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+select {
+  padding: 8px 12px;
+}
+
+.reset {
+  padding: 8px 18px;
+  cursor: pointer;
+}
+
+.reset:disabled {
+  color: var(--muted);
+  background: var(--head);
+  cursor: default;
+}
+
+select:focus-visible,
+.reset:focus-visible {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 2px;
+}
+
+.result-count {
+  margin: 0 0 10px auto;
+  font-weight: 700;
+}
+
+/* ③ 표 */
+.projects {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.projects th {
+  background: var(--head);
+  text-align: left;
+  font-weight: 700;
+  padding: 12px;
+  border-bottom: 2px solid var(--line);
+  white-space: nowrap;
+}
+
+.projects td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.cell-main {
+  display: block;
+}
+
+.cell-sub {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.unknown {
+  color: var(--unknown);
+  font-weight: 700;
+}
+
+.projects td[data-label='마감'] .cell-main,
+.projects td[data-label='마지막 업데이트'] .cell-main {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.col-name .cell-main {
+  font-weight: 700;
+}
+
+tr.row-stalled {
+  background: var(--stalled-bg);
+}
+
+tr.row-overdue {
+  background: var(--overdue-bg);
+}
+
+tr.row-stalled td[data-label='마지막 업데이트'] .cell-sub {
+  color: var(--stalled);
+  font-weight: 700;
+}
+
+tr.row-overdue td[data-label='마감'] .cell-sub {
+  color: var(--overdue);
+  font-weight: 700;
+}
+
+tr.row-overdue td[data-label='마지막 업데이트'] .cell-sub {
+  color: var(--overdue);
+  font-weight: 700;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge-stalled {
+  background: var(--stalled-badge-bg);
+  color: var(--stalled-badge-ink);
+}
+
+.badge-overdue {
+  background: var(--overdue-badge-bg);
+  color: var(--overdue-badge-ink);
+}
+
+tr.empty td {
+  padding: 28px 12px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.note {
+  margin: 14px 0 0;
+  color: var(--unknown);
+  font-weight: 700;
+}
+
+.source {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* 휴대폰 · 태블릿 세로: 표 → 카드 */
+@media (max-width: 899.98px) {
+  .page {
+    padding: 20px 16px 40px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .stat-value {
+    font-size: 2.6rem;
+  }
+
+  .filter {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .reset {
+    flex: 1 1 auto;
+  }
+
+  .result-count {
+    margin: 0 0 12px;
+  }
+
+  .projects,
+  .projects tbody {
+    display: block;
+    background: none;
+    border: 0;
+  }
+
+  .projects thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .projects tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--line);
+    border-radius: 8px;
+  }
+
+  .projects tr.row-stalled {
+    background: var(--stalled-bg);
+    border-top-color: var(--stalled);
+  }
+
+  .projects tr.row-overdue {
+    background: var(--overdue-bg);
+    border-top-color: var(--overdue);
+  }
+
+  .projects td {
+    display: grid;
+    grid-template-columns: 6.5em minmax(0, 1fr);
+    column-gap: 10px;
+    padding: 5px 0;
+    border: 0;
+  }
+
+  .projects td::before {
+    content: attr(data-label);
+    grid-row: 1 / span 3;
+    color: var(--muted);
+    font-size: 16px;
+  }
+
+  .projects td > * {
+    grid-column: 2;
+  }
+
+  .projects td.col-status {
+    order: -2;
+  }
+
+  .projects td.col-name {
+    order: -1;
+    display: block;
+    padding-bottom: 8px;
+  }
+
+  .projects td.col-name::before {
+    content: none;
+  }
+
+  .projects td.col-name .cell-main {
+    font-size: 1.2rem;
+    line-height: 1.35;
+  }
+
+  .projects .badges {
+    margin-top: 4px;
+  }
+
+  .projects tr.empty td {
+    display: block;
+  }
+
+  .projects tr.empty td::before {
+    content: none;
+  }
+}
